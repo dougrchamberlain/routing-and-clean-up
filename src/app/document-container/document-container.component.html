@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [fixedBottomGap]="true" opened [fixedTopGap]="true" [mode]="'side'">
+    <document-list></document-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <section>
+      <nav mat-tab-nav-bar>
+        <a mat-tab-link [routerLink]="'./edit'" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+          <mat-icon>edit</mat-icon>
+        </a>
+      </nav>
+
+      <router-outlet></router-outlet>
+
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

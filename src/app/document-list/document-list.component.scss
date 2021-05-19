@@ -1,0 +1,10 @@
+:host {
+  width: max-content;
+  mat-expansion-panel-header {
+    height: 32px;
+  }
+
+  mat-expansion-panel-header.mat-expanded {
+    height: 32px;
+  }
+}

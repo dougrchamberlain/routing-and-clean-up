@@ -1,0 +1,22 @@
+<mat-expansion-panel expanded>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Document Details
+    </mat-panel-title>
+    <mat-panel-description>
+      This is a summary of the content
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  {{doc | json}}
+</mat-expansion-panel>
+<mat-expansion-panel expanded [hideToggle]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Document Viewer
+    </mat-panel-title>
+    <mat-panel-description>
+      {{doc.type}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <ngx-doc-viewer style="height: 100vh;width:50vw;" [url]="doc?.url"></ngx-doc-viewer>
+</mat-expansion-panel>

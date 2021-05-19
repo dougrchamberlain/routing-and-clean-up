@@ -1,0 +1,56 @@
+<form [formGroup]="patientDocument" novalidate>
+  <mat-card class="document-edit-card">
+    <mat-card-header>
+      <mat-card-title>Editing {{doc | json}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Date Received</mat-label>
+            <!-- #docregion toggle -->
+            <input matInput [matDatepicker]="picker"   >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <!-- #enddocregion toggle -->
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <mat-select placeholder="File type" formControlName="type">
+            <mat-option *ngFor="let fileType of types" [value]="fileType.id">
+              {{ fileType.text }}
+            </mat-option>
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="sub type" formControlName="subType">
+              <mat-option *ngFor="let item of subTypes" [value]="item.subtypeId">
+                {{ item.text }}
+              </mat-option>
+            </mat-select>
+
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <!-- flex this to to make it a single row so it is positionally accurate -->
+          <mat-radio-group formControlName="location">
+            <mat-radio-button value="left">left</mat-radio-button>
+            <mat-radio-button value="none">None</mat-radio-button>
+            <mat-radio-button value="right">right</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button (click)="updateDocument()"><mat-icon>save</mat-icon></button>
+    </mat-card-actions>
+  </mat-card>
+</form>
