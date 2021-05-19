@@ -187,11 +187,14 @@ button.nx-white {
   color: mat-color($nx-greys, nx-white-contrast);
 }
 
-//@include angular-material-theme($nx-light-theme);
+@include angular-material-theme($nx-light-theme);
 
 $nx-dark-theme: mat-dark-theme(
   $nx-primary-palette,
   $nx-accent-palette,
   mat-palette($mat-purple)
 );
-@include angular-material-theme($nx-dark-theme);
+
+.darkMode {
+  @include angular-material-color($nx-dark-theme);
+}

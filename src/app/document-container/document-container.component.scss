@@ -37,6 +37,10 @@
   }
 }
 
-:host {
+mat-sidenav-container {
   height: 100vh;
+}
+
+mat-sidenav-content {
+  height: fit-content;
 }
